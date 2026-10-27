@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities - TIMO GUEST HOUSE</title>
+    <style>
+        :root { --primary: #2e7d32; --secondary: #ff9800; --dark: #1b5e20; --light: #f1f8e9; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Verdana, sans-serif; }
+        body { background-color: var(--light); color: #333; line-height: 1.6; }
+        
+        nav { background-color: var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { color: white; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .nav-links { display: flex; gap: 15px; list-style: none; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px; transition: 0.3s; }
+        .nav-links a:hover { background-color: var(--secondary); color: var(--dark); }
+        .menu-toggle { display: none; font-size: 1.5rem; background: none; border: none; color: white; cursor: pointer; }
+
+        .container { max-width: 900px; margin: 40px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
+        h1 { color: var(--primary); margin-bottom: 20px; }
+        .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .amenity-card { background: var(--light); padding: 15px; border-radius: 8px; border: 1px solid #c8e6c9; font-weight: 500; color: var(--dark); transition: transform 0.2s; }
+        .amenity-card:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        ul { list-style: none; padding: 0; }
+        
+        footer { background-color: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 50px; }
+        marquee { background-color: var(--secondary); color: var(--dark); padding: 10px; font-weight: bold; font-style: italic; margin-top: 20px; border-radius: 5px; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 60px; left: 0; background-color: var(--dark); padding: 10px 0; }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .nav-links a { padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">TIMO GUEST HOUSE</a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About us.html">About Us</a></li>
+            <li><a href="Nature of rooms.html">Rooms</a></li>
+            <li><a href="Amenities.html">Amenities</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="Location.html">Location</a></li>
+            <li><a href="Contact us.html">Contact Us</a></li>
+            <li><a href="Conclusion.html">Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>AMENITIES</h1>
+        <p>In our rooms, there are a variety of supplementary things including:</p>
+        <div class="amenities-grid">
+            <div class="amenity-card">📶 Free WiFi</div>
+            <div class="amenity-card">📺 Television</div>
+            <div class="amenity-card">❄️ Air Conditioners</div>
+            <div class="amenity-card">🚿 Hot & Cold Water</div>
+            <div class="amenity-card">🛏️ Clean Beddings</div>
+            <div class="amenity-card">🧺 Towels</div>
+        </div>
+        <p>We also offer other services like:</p>
+        <div class="amenities-grid">
+            <div class="amenity-card">🍳 Breakfast</div>
+            <div class="amenity-card">🚗 Parking</div>
+            <div class="amenity-card">🔒 24/7 Security</div>
+        </div>
+        <marquee><p>TIMO GUEST HOUSE. THE AFFORDABLE PRICED HOME AWAY FROM YOUR HOME</p></marquee>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> TIMO Guest House. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMO GUEST HOUSE - Home</title>
+    <style>
+        :root { --primary: #2e7d32; --secondary: #ff9800; --dark: #1b5e20; --light: #f1f8e9; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Verdana, sans-serif; }
+        body { background-color: var(--light); color: #333; line-height: 1.6; }
+        
+        /* Navigation */
+        nav { background-color: var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .logo { color: white; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .nav-links { display: flex; gap: 15px; list-style: none; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px; transition: 0.3s; }
+        .nav-links a:hover { background-color: var(--secondary); color: var(--dark); }
+        .menu-toggle { display: none; font-size: 1.5rem; background: none; border: none; color: white; cursor: pointer; }
+
+        /* Main Content */
+        header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, var(--primary), var(--dark)); color: white; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero-container { max-width: 800px; margin: 30px auto; text-align: center; padding: 0 20px; }
+        .hero-container img { max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        
+        /* Footer */
+        footer { background-color: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 50px; }
+        marquee { background-color: var(--secondary); color: var(--dark); padding: 10px; font-weight: bold; font-style: italic; margin-top: 20px; border-radius: 5px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 60px; left: 0; background-color: var(--dark); padding: 10px 0; }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .nav-links a { padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">TIMO GUEST HOUSE</a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About us.html">About Us</a></li>
+            <li><a href="Nature of rooms.html">Rooms</a></li>
+            <li><a href="Amenities.html">Amenities</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="Location.html">Location</a></li>
+            <li><a href="Contact us.html">Contact Us</a></li>
+            <li><a href="Conclusion.html">Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to TIMO GUEST HOUSE</h1>
+        <p>Your affordable home away from home in Masaka</p>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="hero-container">
+        <img src="iii.png" alt="TIMO Guest House Exterior">
+        <marquee><p>TIMO GUEST HOUSE. THE AFFORDABLE PRICED HOME AWAY FROM YOUR HOME</p></marquee>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> TIMO Guest House. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        // Dynamic Year in Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
